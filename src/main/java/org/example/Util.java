@@ -1,5 +1,6 @@
 package org.example;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -23,10 +24,12 @@ public class Util extends BasePage {
     public static void clickOnElement(By by) {
         driver.findElement(by).click();
     }
+
     //Reusable method to type the text
     public static void typeText(By by, String text) {
         driver.findElement(by).sendKeys(text);
     }
+
     //Reusable method to get Text From Element
     public static String getTextFromElement(By by) {
         return driver.findElement(by).getText();
@@ -35,11 +38,13 @@ public class Util extends BasePage {
     public static long timestamp() {
         return (System.currentTimeMillis());
     }
+
     //Reusable method to select from drop down by visible text
     public static void selectFromDropDownByVisibleText(By by, String text) {
         Select select = new Select(driver.findElement(by));
         select.selectByVisibleText(text);
     }
+
     //Reusable method to select from drop down by Index
     public static void selectFromDropDownByIndex(By by, int n) {
         Select select = new Select(driver.findElement(by));
@@ -50,5 +55,12 @@ public class Util extends BasePage {
         Select select = new Select(driver.findElement(by));
         select.selectByValue(value);
     }
+
+  //  Alert alert = driver.switchTo().alert();
+
+ //   public static void getTextfromAlertbox (By by)
+   // {
+    //   driver.switchTo().alert().getText();
+    //}
 
 }

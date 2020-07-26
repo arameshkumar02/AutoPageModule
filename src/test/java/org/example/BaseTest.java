@@ -1,19 +1,21 @@
 package org.example;
 
-import org.junit.Before;
+import org.testng.ITestResult;
+import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import sun.text.normalizer.Utility;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest  extends BasePage {
+public class BaseTest  extends Util{
 
 
         @BeforeMethod
         public static void setBrowser() {
             //Path to open the browser
-            System.setProperty("webdriver.chrome.driver", "C:\\SOFT\\Chrome\\chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "src\\test\\BrowserDrivers\\chromedriver.exe");
             driver = new ChromeDriver();
             //To maximize the window
             driver.manage().window().maximize();
